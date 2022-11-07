@@ -12,9 +12,12 @@ class InfoActa:
         super().__init__()
 
         # Datos del acta
+        self.jurado1_checkbox = ""
+        self.jurado2_checkbox = ""
         self.autor = ""
         self.fecha_acta = ""
         self.nombre_trabajo = ""
+        self.fecha_presentacion = ""
         self.tipo_trabajo = ""
         self.director = ""
         self.codirector = " "

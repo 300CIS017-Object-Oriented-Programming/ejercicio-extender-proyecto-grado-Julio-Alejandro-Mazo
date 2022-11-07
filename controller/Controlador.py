@@ -13,6 +13,7 @@ class Controlador:
     def __init__(self) -> None:
         super().__init__()
         self.actas = []
+        self.directores = ["Carlos Ramirez", "Juan Pablo García", "Frank Martinez", "Luis Eduardo Tobon", "Gerardo M Sarria", "Gloria Ines Alvarez", "Maria Constanza Pabon", "Luisa Fernanda Rincon", "Juan Carlos Martinez"]
 
         # Inicializa los criterios de evaluacion de bse
         self.__inicializar_criterios()
@@ -21,6 +22,10 @@ class Controlador:
     def agregar_evaluacion(self, info_acta_obj):
         self.actas.append(info_acta_obj)
 
+    #Método para retornar directores
+    def retornar_directores(self):
+        return self.directores
+
     # Método privado con la información de la lista criterio
     def __inicializar_criterios(self):
 
@@ -28,11 +33,11 @@ class Controlador:
                  Criterio("Desafío académico y científico del tema", 0.15),
                  Criterio("Cumplimiento de los objetivos propuestos", 0.1),
                  Criterio("Creatividad e innovación de las soluciones y desarrollos propuestos", 0.1),
-                 Criterio("Validez de los resultados y conclusiones", 0.2),
+                 Criterio("Validez de los resultados y conclusiones", 0.15),
                  Criterio("Manejo y procesamiento de la información y bibliografía", 0.1),
                  Criterio("Calidad y presentación del documento escrito", 0.075),
-                 Criterio("Presentación oral", 0.075)]
-
+                 Criterio("Presentación oral", 0.075),
+                 Criterio("Seguimiento de Normas IEEE", 0.05)]
     def mostrar_de_numero_a_palabras(self, numero):
         """
         FIXME: mejorar la logica

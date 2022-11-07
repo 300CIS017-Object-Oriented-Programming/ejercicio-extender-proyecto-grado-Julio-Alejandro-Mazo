@@ -26,8 +26,14 @@ def agregar_acta(st, controlador):
         info_acta_obj.codirector = st.text_input("Codirector", "N.A")
     with col7:
         info_acta_obj.jurado1 = st.text_input("Jurado #1")
+        checkbox = st.checkbox('Jurado número 1 labora en la universidad')
+        if checkbox: info_acta_obj.jurado1_checkbox = "Interno"
+        else: info_acta_obj.jurado1_checkbox = "Externo"
     with col8:
         info_acta_obj.jurado2 = st.text_input("Jurado #2")
+        checkbox2 = st.checkbox('Jurado número 2 labora en la universidad')
+        if checkbox2: info_acta_obj.jurado1_checkbox = "Interno"
+        else: info_acta_obj.jurado1_checkbox = "Externo"
     with col9:
         info_acta_obj.fecha_presentacion = st.text_input("Fecha de Presentación", date(2022,11,7))
     enviado_btn = st.button("Enviar")
@@ -80,9 +86,11 @@ def ver_historico_acta(st, controlador):
         with col7:
             st.write("**Jurado #1**")
             st.write(acta.jurado1)
+            st.write(acta.jurado1_checkbox)
         with col8:
             st.write("**Jurado #2**")
             st.write(acta.jurado2)
+            st.write(acta.jurado2_checkbox)
         with col9:
             st.write("**Nota Final**")
             if not acta.estado:

@@ -21,7 +21,7 @@ def agregar_acta(st, controlador):
     with col3:
         info_acta_obj.tipo_trabajo = st.selectbox('Tipo', ('Aplicado', 'Investigación'))
     with col5:
-        info_acta_obj.director = st.text_input("Director")
+        info_acta_obj.director = st.selectbox('Director', controlador.retornar_directores())
     with col6:
         info_acta_obj.codirector = st.text_input("Codirector", "N.A")
     with col7:

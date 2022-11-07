@@ -13,6 +13,7 @@ class Controlador:
     def __init__(self) -> None:
         super().__init__()
         self.actas = []
+        self.directores = ["Carlos Ramirez", "Juan Pablo García", "Frank Martinez", "Luis Eduardo Tobon", "Gerardo M Sarria", "Gloria Ines Alvarez", "Maria Constanza Pabon", "Luisa Fernanda Rincon", "Juan Carlos Martinez"]
 
         # Inicializa los criterios de evaluacion de bse
         self.__inicializar_criterios()
@@ -20,6 +21,10 @@ class Controlador:
     # Método para agregar los objetos a la lista
     def agregar_evaluacion(self, info_acta_obj):
         self.actas.append(info_acta_obj)
+
+    #Método para retornar directores
+    def retornar_directores(self):
+        return self.directores
 
     # Método privado con la información de la lista criterio
     def __inicializar_criterios(self):

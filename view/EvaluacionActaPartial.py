@@ -128,8 +128,10 @@ def evaluar_criterios(st, controlador):
                 nota_jurado2 = st.number_input(str(num) + ". Nota Jurado 2", 0.0, 5.0)
                 criterio.nota = ((nota_jurado1 + nota_jurado2) / 2) * criterio.porcentaje
                 criterio.observacion = st.text_input(str(num) + ". Observación", "Sin Comentarios.")
+                criterio.extra_observacion = st.text_input(str(num) + ". Observaciones adicionales con reestrcciones","Sin Observaciones")
                 temp += criterio.nota
                 num += 1
+
             if temp > 3.5:
                 st.write("#### Nota Final", temp, "Acta Aprobada.")
             else:
